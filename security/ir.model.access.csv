@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+fit_access_account_stage,fit.access.account_stage.user,model_fit_saltedge_account_stage,base.group_user,1,1,1,1
+fit_access_accounts_user,fit.access.accounts.user,model_fit_saltedge_account,base.group_user,1,1,1,1
+fit_access_interactive_field,fit.access.interactive_field.user,model_fit_saltedge_interactive_field,base.group_user,1,1,1,1
+fit_access_login,fit.access.login,model_fit_saltedge_login,base.group_user,1,1,1,1
+fit_access_login_stage,fit.access.login_stage.user,model_fit_saltedge_login_stage,base.group_user,1,1,1,1
+fit_access_settings_user,fit.access.settings.user,model_fit_saltedge_settings,base.group_user,1,1,0,0
+fit_access_synchronise_stage,fit.access.synchronise_stage.user,model_fit_saltedge_synchronise_stage,base.group_user,1,1,1,1

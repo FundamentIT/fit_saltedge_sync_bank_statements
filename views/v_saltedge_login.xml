@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <template id="assets_backend" name="saltedge_assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/fit_saltedge_sync_bank_statements/static/src/css/fit_saltedge_sync_bank_statements.css"/>
+                <!--<script type="text/javascript" src="/fit_saltedge_sync_bank_statements/static/src/js/fit_saltedge_sync_bank_statements.js"/>-->
+            </xpath>
+        </template>
+
+        <record id="view_tree_login_overview" model="ir.ui.view">
+            <field name="name">Login Overview Tree</field>
+            <field name="model">fit.saltedge.login</field>
+            <field name="arch" type="xml">
+                <tree create="false" edit="false">
+                    <field name="login_id"/>
+                    <field name="login_name"/>
+                    <field name="login_provider"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_kanban_login_overview" model="ir.ui.view">
+            <field name="name">Login Overview Kanban</field>
+            <field name="model">fit.saltedge.login</field>
+            <field name="arch" type="xml">
+                <kanban default_order="login_id" group_create="false" group_delete="false"
+                        group_edit="false" quick_create="false" create="false" edit="false">
+                    <field name="login_name"/>
+                    <field name="login_id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_color_0
+                                oe_kanban_global_click_edit oe_semantic_html_override
+                                oe_kanban_card oe_kanban_card_fancy">
+                                <div class="oe_dropdown_kanban">
+                                    <!-- dropdown menu -->
+                                    <div class="oe_dropdown_toggle">
+                                        <i class="fa fa-bars fa-lg"/>
+                                        <ul class="oe_dropdown_menu">
+                                            <li>
+                                                <a type="delete">Delete</a>
+                                            </li>
+                                            <li>
+                                                <ul class="oe_kanban_colorpicker"
+                                                    data-field="color"/>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="oe_clear"></div>
+                                </div>
+                                <div t-attf-class="oe_kanban_content">
+                                    <!-- title -->
+                                    <field name="login_name"/>
+                                    <br/>
+                                    ID: <field name="login_id"/>
+                                    <br/>
+                                    Provider: <field name="login_provider"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="view_form_login_overview" model="ir.ui.view">
+            <field name="name">Login Overview Form</field>
+            <field name="model">fit.saltedge.login</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Login" create="false" edit="false">
+                    <header>
+                        <!--<button name="fit_login_activate" type="object" string="(De-)Activate"-->
+                                <!--class="fit_login_button_activate"/>-->
+                    </header>
+                    <sheet>
+                        <separator string="Details" colspan="2"/>
+                        <group name="group_top">
+                            <group name="group-left">
+                                <field name="login_name" readonly="1"/>
+                                <field name="login_id" readonly="1"/>
+                                <field name="login_provider" readonly="1"/>
+                            </group>
+                            <group name="group-right">
+                                <!--<field name="login_nr_accounts" readonly="1"/>-->
+                                <!--<field name="login_active" readonly="1"/>-->
+                            </group>
+                        </group>
+
+                        <separator string="Help" colspan="2"/>
+                        <div>
+                            This form represents the bank registration details.<br/>A Bank registration can have one or more account
+                            registrations.<br/>The account registartion are available on the 'Account overview' menu.<br/>
+                        </div>
+                    </sheet>
+                </form>
+
+            </field>
+
+        </record>
+    </data>
+</odoo>

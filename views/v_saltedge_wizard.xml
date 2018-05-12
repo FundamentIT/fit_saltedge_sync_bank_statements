@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+       <record model="ir.ui.view" id="confirm_wizard_form">
+            <field name="name">fit.wizard.form</field>
+            <field name="model">fit.saltedge.account.enable.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Confirm dialog">
+                    <field name="yes_no" readonly="1" />
+                    <footer>
+                        <button class="oe_highlight" name="yes" string="Ja" />
+                        <button class="oe_highlight" name="no" string="Nee" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

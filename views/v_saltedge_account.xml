@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <template id="assets_backend" name="saltedge_assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/fit_saltedge_sync_bank_statements/static/src/css/fit_saltedge_sync_bank_statements.css"/>
+                <script type="text/javascript" src="/fit_saltedge_sync_bank_statements/static/src/js/fit_saltedge_sync_bank_statements.js"/>
+            </xpath>
+        </template>
+
+        <record id="view_tree_account_overview" model="ir.ui.view">
+            <field name="name">Account Overview Tree</field>
+            <field name="model">fit.saltedge.account</field>
+            <field name="arch" type="xml">
+                <tree decoration-danger="account_active==False" create="false" >
+                    <field name="account_id"/>
+                    <field name="account_name"/>
+                    <field name="account_active"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_kanban_account_overview" model="ir.ui.view">
+            <field name="name">Account Overview Kanban</field>
+            <field name="model">fit.saltedge.account</field>
+            <!--<field name="inherit_id" ref="fit_saltedge_sync_bank_statements.board"/>-->
+            <field name="arch" type="xml">
+                <kanban default_group_by="account_status" default_order="account_login_id" group_create="false" group_delete="false"
+                        group_edit="false" quick_create="false" create="false" edit="false">
+                    <field name="account_name"/>
+                    <field name="account_id"/>
+                    <!--<field name="account_active==True ? 'Active' ? 'Inactive'" />-->
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_color_0
+                                oe_kanban_global_click_edit oe_semantic_html_override
+                                oe_kanban_card oe_kanban_card_fancy">
+                                <div class="oe_dropdown_kanban">
+                                    <!-- dropdown menu -->
+                                    <div class="oe_dropdown_toggle">
+                                        <i class="fa fa-bars fa-lg"/>
+                                        <ul class="oe_dropdown_menu">
+                                            <li>
+                                                <a type="delete">Delete</a>
+                                            </li>
+                                            <li>
+                                                <ul class="oe_kanban_colorpicker"
+                                                    data-field="color"/>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="oe_clear"></div>
+                                </div>
+                                <div t-attf-class="oe_kanban_content">
+                                    <!-- title -->
+                                    <field name="account_name"/>
+                                    <br/>
+                                    ID: <field name="account_login_id"/>
+                                    <br/>
+                                    Type: <field name="account_nature"/>
+                                    <!--<field name="account_balance"/>-->
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="view_filter_account_overview" model="ir.ui.view">
+            <field name="name">Account Overview Filter</field>
+            <field name="model">fit.saltedge.account</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="account_name"/>
+                    <filter string="Active" domain="[('account_active','=',True)]"/>
+                    <filter string="Inactive" domain="[('account_active','=',False)]"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_saltedge_account">
+
+            <field name="name">SaltEdge Account</field>
+            <field name="model">fit.saltedge.account</field>
+            <!--<field name=""-->
+            <!--<field name="inherit_id" ref="product.product_normal_form_view"/>-->
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+
+                <form string="Account" create="false" edit="true">
+                    <header>
+                        <button name="fit_account_activate" type="object" string="(De-)Activate"
+                                class="fit_account_button_activate"/>
+                    </header>
+                    <sheet>
+                        <separator string="Details" colspan="2"/>
+                        <group name="group_top">
+                            <group name="group-left">
+                                <field name="account_name" readonly="1"/>
+                                <field name="account_id" readonly="1"/>
+                                <field name="account_login_id" readonly="1"/>
+                                <field name="account_nr_transactions" readonly="1"/>
+                                <field name="account_balance" readonly="1"/>
+                            </group>
+                            <group name="group-right">
+                                <field name="account_nature" readonly="1"/>
+                                <field name="account_latest_sync" readonly=""/>
+                                <field name="account_latest_sync_id" readonly=""/>
+                                <!--<field name="account_active" readonly="1"/>-->
+                            </group>
+                        </group>
+
+                        <separator string="Help" colspan="2"/>
+                        <div>
+                            This form represents the bank account details, the account can be activated and deactivated. <br/>Only one active
+                            bank account can be present. <br/>The synchroniation proces automatically retrieves the active account.
+                        </div>
+                    </sheet>
+                </form>
+
+            </field>
+
+        </record>
+    </data>
+</odoo>

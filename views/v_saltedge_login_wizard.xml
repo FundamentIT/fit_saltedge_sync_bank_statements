@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <template id="assets_backend" name="saltedge_assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/fit_saltedge_sync_bank_statements/static/src/css/fit_saltedge_sync_bank_statements.css"/>
+                <!--<script type="text/javascript" src="/fit_saltedge_sync_bank_statements/static/src/js/fit_saltedge_sync_bank_statements.js"/>-->
+            </xpath>
+        </template>
+
+        <record id="view_wizard_login" model="ir.ui.view">
+            <field name="name">Login Wizard</field>
+            <field name="model">fit.saltedge.login.wizard</field>
+            <field name="arch" type="xml">
+
+                <form>
+                    <header>
+                        <button id="fit_login_start" string="Start" type="object" name="start_login"
+                                class="oe_highlight"
+                                attrs="{'invisible': [('login_wizard_state', '!=', 'confirm')]}"/>
+                        <button id="fit_login_registration" string="Start Registration" type="object" name="register_login"
+                                class="oe_highlight"
+                                attrs="{'invisible': ['|', ('login_wizard_state', '!=', 'initial'), ('login_wizard_provider_id', '==', '0')]}"/>
+                        <button id="fit_login_validation" string="Validate Data" type="object" name="validate_data"
+                                class="oe_highlight"
+                                attrs="{'invisible': [('login_wizard_state', '!=', 'interactive')]}"/>
+                        <button id="fit_login_view_result" string="View Registration" type="object" name="view_registrations"
+                                class="oe_highlight"
+                                attrs="{'invisible': [('login_wizard_state', '!=', 'finish')]}"/>
+                        <!--<button id="fit_test" string="TEST" type="object" name="validate_data"-->
+                        <!--class="oe_highlight" confirm="Weet u blablabla"/>-->
+                        <!--attrs="{'invisible': ['|', ('login_wizard_state', '!=', 'initial'), (True, '==', True)]}"/>-->
+
+                    </header>
+                    <group name="group-top">
+                        <group name="group-top-left" attrs="{'invisible': [('login_wizard_state','!=','confirm')]}">
+                            <separator string="Are you sure?" colspan="100"/>
+                            <div colspan="100">
+                                By clicking the 'start' button you are starting the bank registration process.
+                                The available bank institutions are retrieved and you can choose the desired institution.
+                                After choosing the institution you are asked to provide the right credentials, different for each
+                                bank, make sure you have all the details available before starting the process.
+                            </div>
+                        </group>
+                        <group name="group-top-left" attrs="{'invisible': [('login_wizard_state','==','confirm')]}">
+
+                            <separator string="Details" colspan="3"/>
+                            <field name="login_wizard_state" readonly="1" invisible="1"/>
+                            <field name="login_wizard_id" readonly="1" invisible="1"/>
+                            <field name="login_wizard_provider_id" invisible="1"/>
+                            <field name="login_wizard_country_id" invisible="1"/>
+                            <!--<field name="login_wizard_provider" readlony="1" widget="selection"-->
+                            <!--attrs="{'invisible': [('login_wizard_state','==','initial')]}"/>-->
+                            <field name="login_wizard_provider" readlony="0" widget="selection"/>
+                            <!--attrs="{'invisible': [('login_wizard_state','!=','initial')]}"/>-->
+                            <!--<field name="login_wizard_status" readonly="1"/>-->
+
+                            <!-- start dynamic field set 1 -->
+                            <field name="login_wizard_char_fld_1_visible" nolabel="1" readonly="1" invisible="1"/>
+                            <field name="login_wizard_char_fld_1_id" nolabel="1" readonly="1" invisible="1"/>
+                            <field name="login_wizard_char_fld_1_label" nolabel="1" readonly="1"
+                                   attrs="{'invisible': [('login_wizard_char_fld_1_visible','==',False)]}"/>
+                            <field name="login_wizard_char_fld_1_value" nolabel="1" style="width:87%; margin-left:7px;"
+                                   attrs="{'invisible': [('login_wizard_char_fld_1_visible','==',False)]}"/>
+                            <!-- end dynamic field set 1 -->
+
+                            <!-- start dynamic field set 2 -->
+                            <field name="login_wizard_char_fld_2_visible" nolabel="1" readonly="1" invisible="1"/>
+                            <field name="login_wizard_char_fld_2_id" nolabel="1" readonly="1" invisible="1"/>
+                            <field name="login_wizard_char_fld_2_label" nolabel="1" readonly="1"
+                                   attrs="{'invisible': [('login_wizard_char_fld_2_visible','!=',True)]}"/>
+                            <field name="login_wizard_char_fld_2_value" nolabel="1" style="width:87%; margin-left:7px;"
+                                   attrs="{'invisible': [('login_wizard_char_fld_2_visible','!=',True)]}"/>
+                            <!-- end dynamic field set 2 -->
+
+                            <!-- start dynamic field set 3 -->
+                            <field name="login_wizard_pwd_fld_1_visible" nolabel="1" readonly="1" invisible="1"/>
+                            <field name="login_wizard_pwd_fld_1_id" nolabel="1" readonly="1" invisible="1"/>
+                            <field name="login_wizard_pwd_fld_1_label" nolabel="1" readonly="1"
+                                   attrs="{'invisible': [('login_wizard_pwd_fld_1_visible','!=',True)]}"/>
+                            <field name="login_wizard_pwd_fld_1_value" password="True" nolabel="1" style="width:87%; margin-left:7px;"
+                                   attrs="{'invisible': [('login_wizard_pwd_fld_1_visible','!=',True)]}"/>
+                            <!-- end dynamic field set 3 -->
+
+                            <!-- start dynamic field set 4 -->
+                            <field name="login_wizard_selection_fld_1_visible" nolabel="0" readonly="1" invisible="1"/>
+                            <field name="login_wizard_selection_fld_1_id" nolabel="0" readonly="1" invisible="1"/>
+                            <field name="login_wizard_selection_fld_1_field" nolabel="0" readonly="1" invisible="1"/>
+                            <field name="login_wizard_selection_fld_1_label" nolabel="1" readonly="1"
+                                   attrs="{'invisible': [('login_wizard_selection_fld_1_visible','!=',True)]}"/>
+                            <field name="login_wizard_selection_fld_1_value" nolabel="1" widget="selection" style="width:87%; margin-left:7px;"
+                                   attrs="{'invisible': [('login_wizard_selection_fld_1_visible','!=',True)]}"/>
+                            <!-- end dynamic field set 4 -->
+                            <separator string="Status" colspan="3"/>
+                            <!--<field name="login_wizard_status_label" readonly="1" colspan="3" nolabel="1"/>-->
+                            <field name="login_wizard_status" readonly="1" class="fit_status" colspan="3" nolabel="1"/>
+                        </group>
+                        <group name="group-top-right"
+                               attrs="{'invisible': [('login_wizard_state','!=','interactive')]}">
+                            <separator string="Result" colspan="100"/>
+                            <div colspan="100">
+                                <b>Response from bank:</b>
+                            </div>
+                            <field name="login_wizard_connect" readonly="1" colspan="2" nolabel="1"/>
+                            <hr colspan="100" style="margin-top: 20px;"/>
+                            <div colspan="100">
+                                <b>Please fill in the interactive field values in the table below:</b>
+                            </div>
+                            <field name="login_wizard_interactive_fields" readonly="0" nolabel="1" colspan="2">
+                                <tree string="Details" class="interactive_fields_tree" editable="top" delete="false"
+                                      create="false" colspan="2">
+                                    <field name="interactive_field_field" readonly="1"/>
+                                    <field name="interactive_field_value"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group name="group-top-right"
+                               attrs="{'invisible': [('login_wizard_state','!=','error')]}">
+                            <separator string="Error" colspan="100"/>
+                            <field name="login_wizard_error" readonly="1" colspan="100"/>
+                        </group>
+                        <group name="group-top-right"
+                               attrs="{'invisible': [('login_wizard_state','!=','finish')]}">
+                            <separator string="Result" colspan="100"/>
+                            <div colspan="100">
+                                Process successful, click on the 'View Registrations' button to validate the login.
+                            </div>
+                        </group>
+                    </group>
+                    <!--<field name="login_wizard_interactive_fields" readonly="0" nolabel="1" colspan="2">-->
+                    <!--<tree string="Details" class="interactive_fields_tree" editable="top" delete="false"-->
+                    <!--create="false" colspan="2">-->
+                    <!--<field name="interactive_field_field" readonly="1"/>-->
+                    <!--<field name="interactive_field_value"/>-->
+                    <!--</tree>-->
+                    <!--</field>-->
+                    <!--<field name="login_wizard_saltedge_connect" readonly="1"/>-->
+                    <!--<field name="login_wizard_saltedge_connect" readonly="0" nolabel="0"/>-->
+                    <!--<group>-->
+                    <!--<group>-->
+                    <!--</group>-->
+                    <!--<group>-->
+                    <!--</group>-->
+                    <!--</group>-->
+                    <!--<footer>-->
+                    <!--<button special="cancel" string="Cancel"/>-->
+                    <!--</footer>-->
+                </form>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

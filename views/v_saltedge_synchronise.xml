@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <template id="assets_backend" name="fit_saltedge_sync_bank_statements assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet"
+                  href="/fit_saltedge_sync_bank_statements/static/src/css/fit_saltedge_sync_bank_statements.css"/>
+            <script type="text/javascript"
+                    src="/fit_saltedge_sync_bank_statements/static/src/js/fit_saltedge_sync_bank_statements.js"/>
+        </xpath>
+        <!--<xpath expr="o_form_buttons_edit"-->
+
+    </template>
+
+    <record id="view_tree_synchronise" model="ir.ui.view">
+        <field name="name">Synchroniseren</field>
+        <field name="model">fit.saltedge.synchronise</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree create="false" edit="false">
+                <field name="id"/>
+                <field name="synchronise_login_id"/>
+                <field name="synchronise_state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_form_synchronise" model="ir.ui.view">
+        <field name="name">Synchroniseren</field>
+        <field name="model">fit.saltedge.synchronise</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Synchronise" create="false" edit="false" write="false">
+                <header>
+                    <button id="fit_sync_start" string="Start" type="object" name="start_synchronization"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('synchronise_state_check','!=', 'Initial')]}"/>
+                    <button id="fit_sync_validate" string="Validate data" type="object" name="validate_synchronization"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('synchronise_state_check','!=','Interactive')]}"/>
+                    <button id="fit_sync_sync" string="Retrieve Transactions" type="object" name="retrieve_transactions"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('synchronise_state_check','!=','Success')]}"/>
+                    <button id="fit_sync_sync" string="Retrieve Available Transactions" type="object" name="retrieve_available_transactions"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('synchronise_state_check','!=','Error')]}"/>
+                    <button id="fit_create_journal" string="Create New Journal" type="object" name="create_journal"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('synchronise_journal_fail','!=',True)]}"/>
+                    <button id="fit_view_reconciliation" string="View Bank Statements" type="object" name="view_reconciliation"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('synchronise_state_check','!=','Done')]}"/>
+                    <field name="synchronise_state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <field name="synchronise_error" class="alert alert-info" readonly="1" colspan="100"/>
+                    <field name="synchronise_state_check" invisible="1"/>
+                    <field name="synchronise_journal_fail" invisible="1"/>
+                    <field name="synchronise_statements_ids" invisible="1"/>
+                    <field name="synchronise_notifications" invisible="1"/>
+                    <group name="group-top">
+                        <group name="group-top-left" attrs="{'invisible': [('synchronise_state_check','!=','Initial')]}">
+                            <separator string="Are you sure?" colspan="100"/>
+                            <div colspan="100">
+                                By clicking the 'start' button you are starting the bank account synchronization process.
+                                <br/>The active bank account will be retrieved and the communication process is started.
+                                <br/>You may be asked, depending on the bank institution, to provide additional interactive credentials.
+                                <br/>The progress is automatically updated; and status information is provided.
+                                <br/>Please keep in mind that a synchronization can only be started once per hour and that the process could
+                                take a couple minutes to complete.
+                            </div>
+                        </group>
+                        <group name="group-top-left" attrs="{'invisible': [('synchronise_state_check','==','Initial')]}">
+                            <separator string="Details" colspan="2"/>
+                            <field name="synchronise_account" readonly="1"/>
+                            <field name="synchronise_account_name" readonly="1"/>
+                            <field name="synchronise_account_id" readonly="1"/>
+                            <field name="synchronise_customer_id" readonly="1"/>
+                            <field name="synchronise_login_id" readonly="1"/>
+                            <field name="synchronise_last_update" readonly="1"/>
+                            <field name="synchronise_saltedge_stage" readonly="1"/>
+                        </group>
+                        <group name="group-top-right" attrs="{'invisible': [('synchronise_state_check','!=','Interactive')]}">
+                            <separator string="Result" colspan="100"/>
+                            <div colspan="100">
+                                <b>Connect to bank result:</b>
+                            </div>
+                            <field name="synchronise_connect" readonly="1" colspan="2" nolabel="1"/>
+                            <hr colspan="100" style="margin-top: 20px;"/>
+                            <div colspan="100">
+                                <b>Please fill in the interactive field values in the table below:</b>
+                            </div>
+                            <field name="synchronise_interactive_fields" readonly="0" nolabel="1" colspan="2">
+                                <tree string="Details" class="interactive_fields_tree" editable="top" delete="false"
+                                      create="false" colspan="2">
+                                    <field name="interactive_field_field" readonly="1"/>
+                                    <field name="interactive_field_value"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group name="group-top-right" attrs="{'invisible': [('synchronise_state_check','!=','Success')]}">
+                            <separator string="Result" colspan="100"/>
+                            <div colspan="100">
+                                <b>Transactions update result successful, click the 'View transactions' button to open the results and start the
+                                    reconciliation.</b>
+                            </div>
+                        </group>
+                    </group>
+                    <group name="group-bottom" attrs="{'invisible': [('synchronise_state_check','==','Initial')]}">
+                        <field name="synchronise_status" readonly="1" class="fit_status" colspan="2"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_kanban_synchronise" model="ir.ui.view">
+        <field name="name">Synchroniseren</field>
+        <field name="model">fit.saltedge.synchronise</field>
+        <field name="type">kanban</field>
+        <field name="arch" type="xml">
+            <!-- -->
+            <kanban default_group_by="synchronise_state" default_order="id desc" group_create="false" group_delete="false" group_edit="false"
+                    quick_create="false" create="false" edit="false" class="o_kanban_small_column">
+
+                <field name="synchronise_id"/>
+                <field name="synchronise_last_update"/>
+                <field name="synchronise_state"/>
+
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_color_0
+                                oe_kanban_global_click_edit oe_semantic_html_override
+                                oe_kanban_card oe_kanban_card_fancy">
+                            <div class="oe_dropdown_kanban">
+                                <!-- dropdown menu -->
+                                <div class="oe_dropdown_toggle">
+                                    <i class="fa fa-bars fa-lg"/>
+                                    <ul class="oe_dropdown_menu">
+                                        <li>
+                                            <a type="delete">Delete</a>
+                                        </li>
+                                        <li>
+                                            <ul class="oe_kanban_colorpicker"
+                                                data-field="color"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="oe_clear"></div>
+                            </div>
+                            <div t-attf-class="oe_kanban_content">
+                                <!-- title -->
+                                <field name="synchronise_last_update"/>
+                                <br/>
+                                <field name="synchronise_account_name"/>
+                                <!-- -
+                                <field name="synchronise_customer_id"/>-->
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+</odoo>

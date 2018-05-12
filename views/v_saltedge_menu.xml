@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!--<data>-->
+    <template id="assets_backend" name="fit_saltedge_bank_import_assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/fit_saltedge_sync_bank_statements/static/src/css/fit_saltedge_sync_bank_statements.css"/>
+            <script type="text/javascript" src="/fit_saltedge_sync_bank_statements/static/src/js/fit_saltedge_sync_bank_statements.js"/>
+        </xpath>
+    </template>
+
+    <menuitem id="main_saltedge_bank_import" name="Bank import" groups="base.group_user"/>
+
+    <menuitem id="menu_saltedge_bank_import" name="Bank import" parent="main_saltedge_bank_import"/>
+
+    <record model="ir.actions.act_window" id="synchronise_overview_action">
+        <field name="name">Synchronization overview</field>
+        <field name="res_model">fit.saltedge.synchronise</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+    <menuitem id="synchronise_overview_saltedge_bank_import" name="Synchronization overview" parent="menu_saltedge_bank_import"
+              action="synchronise_overview_action" sequence="10"/>
+
+    <record model="ir.actions.client" id="synchronise_start_action">
+        <field name="name">Synchronization start</field>
+        <field name="tag">fit.saltedge.synchronise.start</field>
+    </record>
+    <menuitem id="synchronise_start_saltedge_bank_import" name="Synchronization start" parent="menu_saltedge_bank_import"
+              action="synchronise_start_action" sequence="20"/>
+
+    <record model="ir.actions.act_window" id="account_overview_action">
+        <field name="name">Account overview</field>
+        <field name="res_model">fit.saltedge.account</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+    <menuitem id="accounts_saltedge_bank_import" name="Account overview" parent="menu_saltedge_bank_import"
+              action="account_overview_action" sequence="30"/>
+
+    <record model="ir.actions.act_window" id="login_overview_action">
+        <field name="name">Bank overview</field>
+        <field name="res_model">fit.saltedge.login</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+    <menuitem id="login_saltedge_bank_import" name="Bank overview" parent="menu_saltedge_bank_import"
+              action="login_overview_action" sequence="40"/>
+
+    <!--<record model="ir.actions.act_window" id="login_registration_action">-->
+        <!--<field name="name">Bank registration</field>-->
+        <!--<field name="res_model">fit.saltedge.login.wizard</field>-->
+        <!--<field name="view_type">form</field>-->
+        <!--<field name="view_mode">form</field>-->
+    <!--</record>-->
+        <!--<menuitem id="login_wizard_saltedge_bank_import" name="Bank registration 2" parent="menu_saltedge_bank_import"-->
+              <!--action="login_registration_action" sequence="49"/>-->
+
+    <record model="ir.actions.client" id="bank_registration_start_action">
+        <field name="name">Bank registration</field>
+        <field name="tag">fit.saltedge.bank.registration.start</field>
+    </record>
+    <menuitem id="bank_registration_start_item" name="Bank registration" parent="menu_saltedge_bank_import"
+              action="bank_registration_start_action" sequence="50"/>
+
+    <!--<record model="ir.actions.client" id="synchronise_action">-->
+    <!--<field name="name">Synchroniseren</field>-->
+    <!--<field name="tag">saltedge.synchronise</field>-->
+    <!--</record>-->
+
+
+    <record model="ir.actions.act_window" id="settings_action">
+        <field name="name">Settings</field>
+        <field name="res_model">fit.saltedge.settings</field>
+        <!--<field name="view_id" ref="view_kanban_settings"/>-->
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,form</field>
+    </record>
+    <menuitem id="settings_saltedge_bank_import" name="Settings" parent="menu_saltedge_bank_import"
+              action="settings_action" sequence="60"/>
+
+
+    <!--</data>-->
+</odoo>

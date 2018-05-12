@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record model="fit.saltedge.login.stage" id="login_stage_active">
+        <field name="login_stage_name">Active</field>
+        <field name="login_stage_id">active</field>
+        <field name="fold" eval="False"/>
+        <field name="login_stage_sequence">10</field>
+    </record>
+    <record model="fit.saltedge.login.stage" id="login_stage_inactive">
+        <field name="login_stage_name">Inactive</field>
+        <field name="login_stage_id">inactive</field>
+        <field name="fold" eval="False"/>
+        <field name="login_stage_sequence">20</field>
+    </record>
+</odoo>
