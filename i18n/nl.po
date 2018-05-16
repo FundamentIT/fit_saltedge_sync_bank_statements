@@ -6,14 +6,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-24 13:19+0000\n"
-"PO-Revision-Date: 2017-11-27 20:08+0100\n"
+"POT-Creation-Date: 2018-05-16 13:21+0000\n"
+"PO-Revision-Date: 2018-05-16 15:28+0200\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.0.7\n"
 "Last-Translator: \n"
 "Language: nl\n"
 
@@ -957,21 +957,28 @@ msgid "Synchronization start"
 msgstr "Synchronisatie start"
 
 #. module: fit_saltedge_sync_bank_statements
-#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_login_overview
-msgid "TODO LOGIN BESCHRIJVING...."
-msgstr ""
-
-#. module: fit_saltedge_sync_bank_statements
 #: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_saltedge_account
 msgid ""
-"This form represents the bank account details, the acocunt can be activated "
+"This form represents the bank account details, the account can be activated "
 "and deactivated. <br/>Only one active\n"
-"                            bank account can be present. The synchronization "
-"proces automatically retrives the active account."
+"                            bank account can be present. <br/>The "
+"synchronization process automatically retrieves the active account."
 msgstr ""
-"Dit formulier geeft een weergave van de bank rekening details, de rekening "
-"kan worden ge-(de)activeerd.<br/>Er kan maar één actieve bank rekening "
-"aanwezig zijn. Het synchronisatie proces verwerkt de actieve bank rekening."
+"Dit formulier geeft de details van de bank rekening weer, een rekening kan "
+"worden ge-activeerd of ge-deactiveerd.<br/>Er kan maar één actieve rekening "
+"zijn, het synchronisatie proces kiest automatisch de actieve rekening."
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_login_overview
+msgid ""
+"This form represents the bank registration details.<br/>A Bank registration "
+"can have one or more account\n"
+"                            registrations.<br/>The account registration is "
+"available on the 'Account overview' menu.<br/>"
+msgstr ""
+"Dit formulier geeft de details van de bank weer.<br/>Een bank van één of "
+"meerdere gekoppelde rekeningen hebben.<br/>De rekening registratie(s) is/"
+"zijn beschikbaar in het 'Rekening overzicht' menu.<br/>"
 
 #. module: fit_saltedge_sync_bank_statements
 #: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_account_nature
@@ -1007,7 +1014,7 @@ msgstr "Valideer Instellingen"
 #. module: fit_saltedge_sync_bank_statements
 #: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_synchronise
 msgid "Validate data"
-msgstr "Valideer Gegevens"
+msgstr "Vailideer Gegevens"
 
 #. module: fit_saltedge_sync_bank_statements
 #: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_interactive_field_interactive_field_value
@@ -1039,21 +1046,6 @@ msgid ""
 "journal: %s"
 msgstr ""
 "U dient een standaard debet en credit rekening op te geven voor dagboek: %s"
-
-#. module: fit_saltedge_sync_bank_statements
-#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_login_overview
-msgid "actie 1"
-msgstr "actie 1"
-
-#. module: fit_saltedge_sync_bank_statements
-#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_login_overview
-msgid "actie 2"
-msgstr "actie 2"
-
-#. module: fit_saltedge_sync_bank_statements
-#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_login_overview
-msgid "actie 3"
-msgstr "actie 3"
 
 #. module: fit_saltedge_sync_bank_statements
 #: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_selection_fld_1_id

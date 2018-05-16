@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-24 13:19+0000\n"
-"PO-Revision-Date: 2017-11-24 13:19+0000\n"
+"POT-Creation-Date: 2018-05-16 13:21+0000\n"
+"PO-Revision-Date: 2018-05-16 13:21+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -880,14 +880,15 @@ msgid "Synchronization start"
 msgstr ""
 
 #. module: fit_saltedge_sync_bank_statements
-#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_login_overview
-msgid "TODO LOGIN BESCHRIJVING...."
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_saltedge_account
+msgid "This form represents the bank account details, the account can be activated and deactivated. <br/>Only one active\n"
+"                            bank account can be present. <br/>The synchronization process automatically retrieves the active account."
 msgstr ""
 
 #. module: fit_saltedge_sync_bank_statements
-#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_saltedge_account
-msgid "This form represents the bank account details, the acocunt can be activated and deactivated. <br/>Only one active\n"
-"                            bank account can be present. The synchronization proces automatically retrives the active account."
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_login_overview
+msgid "This form represents the bank registration details.<br/>A Bank registration can have one or more account\n"
+"                            registrations.<br/>The account registration is available on the 'Account overview' menu.<br/>"
 msgstr ""
 
 #. module: fit_saltedge_sync_bank_statements
@@ -952,21 +953,6 @@ msgstr ""
 #: code:addons/fit_saltedge_sync_bank_statements/classes/c_transactions.py:328
 #, python-format
 msgid "You have to set a Default Debit Account and a Default Credit Account for the journal: %s"
-msgstr ""
-
-#. module: fit_saltedge_sync_bank_statements
-#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_login_overview
-msgid "actie 1"
-msgstr ""
-
-#. module: fit_saltedge_sync_bank_statements
-#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_login_overview
-msgid "actie 2"
-msgstr ""
-
-#. module: fit_saltedge_sync_bank_statements
-#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_login_overview
-msgid "actie 3"
 msgstr ""
 
 #. module: fit_saltedge_sync_bank_statements

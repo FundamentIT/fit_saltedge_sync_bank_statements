@@ -92,7 +92,7 @@
                         <separator string="Help" colspan="2"/>
                         <div>
                             This form represents the bank registration details.<br/>A Bank registration can have one or more account
-                            registrations.<br/>The account registartion are available on the 'Account overview' menu.<br/>
+                            registrations.<br/>The account registration is available on the 'Account overview' menu.<br/>
                         </div>
                     </sheet>
                 </form>

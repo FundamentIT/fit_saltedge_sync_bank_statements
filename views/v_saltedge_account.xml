@@ -108,14 +108,14 @@
                                 <field name="account_nature" readonly="1"/>
                                 <field name="account_latest_sync" readonly=""/>
                                 <field name="account_latest_sync_id" readonly=""/>
-                                <!--<field name="account_active" readonly="1"/>-->
+                                <field name="account_active" readonly="1"/>
                             </group>
                         </group>
 
                         <separator string="Help" colspan="2"/>
                         <div>
                             This form represents the bank account details, the account can be activated and deactivated. <br/>Only one active
-                            bank account can be present. <br/>The synchroniation proces automatically retrieves the active account.
+                            bank account can be present. <br/>The synchronization process automatically retrieves the active account.
                         </div>
                     </sheet>
                 </form>
