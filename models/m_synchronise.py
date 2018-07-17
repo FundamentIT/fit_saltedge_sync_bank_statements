@@ -114,6 +114,15 @@ class FitSaltedgeSynchroniseModel(models.TransientModel):
         return True
 
     @api.multi
+    def update_data(self):
+        self.env['bus.bus'].sendone('auto_refresh', 'fit.saltedge.synchronise')
+
+        # return {
+        #    'type': 'ir.actions.client',
+        #    'tag': 'auto_refresh',
+        # }
+
+    @api.multi
     def validate_synchronization(self):
         try:
             _c_saltedge_settings = FitSaltEdgeSettings(self.env).get_settings()

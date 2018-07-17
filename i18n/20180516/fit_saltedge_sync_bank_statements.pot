@@ -1,0 +1,976 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* fit_saltedge_sync_bank_statements
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-24 13:19+0000\n"
+"PO-Revision-Date: 2017-11-24 13:19+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fit_saltedge_sync_bank_statements
+#: code:addons/fit_saltedge_sync_bank_statements/models/m_synchronise.py:228
+#, python-format
+msgid "%d transactions had already been imported and were ignored."
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_saltedge_account
+msgid "(De-)Activate"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: code:addons/fit_saltedge_sync_bank_statements/models/m_synchronise.py:228
+#, python-format
+msgid "1 transaction had already been imported and was ignored."
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_synchronise
+msgid "<b>Connect to bank result:</b>"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_synchronise
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_wizard_login
+msgid "<b>Please fill in the interactive field values in the table below:</b>"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_wizard_login
+msgid "<b>Response from bank:</b>"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_synchronise
+msgid "<b>Transactions update result successful, click the 'View transactions' button to open the results and start the\n"
+"                                    reconciliation.</b>"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_kanban_account_overview
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_kanban_login_overview
+msgid "<br/>\n"
+"                                    ID:"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_kanban_login_overview
+msgid "<br/>\n"
+"                                    Provider:"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_kanban_account_overview
+msgid "<br/>\n"
+"                                    Type:"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_saltedge_connect
+msgid "<p>test</p>"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model,name:fit_saltedge_sync_bank_statements.model_fit_saltedge_account
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_synchronise_account_name
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_saltedge_account
+msgid "Account"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_synchronise_account_id
+msgid "Account ID"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model,name:fit_saltedge_sync_bank_statements.model_fit_saltedge_account_stage
+msgid "Account Stage"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_account_id
+msgid "Account id"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_account_login_id
+msgid "Account login id"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_account_nr_transactions
+msgid "Account nr transactions"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.actions.act_window,name:fit_saltedge_sync_bank_statements.account_overview_action
+#: model:ir.ui.menu,name:fit_saltedge_sync_bank_statements.accounts_saltedge_bank_import
+msgid "Account overview"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_filter_account_overview
+msgid "Active"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_account_active
+msgid "Active?"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: code:addons/fit_saltedge_sync_bank_statements/models/m_synchronise.py:220
+#, python-format
+msgid "All transactions already processed, nothing to do."
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: code:addons/fit_saltedge_sync_bank_statements/models/m_synchronise.py:231
+#, python-format
+msgid "Already imported items"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_settings
+msgid "Are you sure you want the delete all bank and account registrations?"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_synchronise
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_wizard_login
+msgid "Are you sure?"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_account_balance
+msgid "Balance"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: code:addons/fit_saltedge_sync_bank_statements/models/m_login.py:315
+#, python-format
+msgid "Bank Overview"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_data_file
+msgid "Bank Statement File"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.menu,name:fit_saltedge_sync_bank_statements.main_saltedge_bank_import
+#: model:ir.ui.menu,name:fit_saltedge_sync_bank_statements.menu_saltedge_bank_import
+msgid "Bank import"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.actions.act_window,name:fit_saltedge_sync_bank_statements.login_overview_action
+#: model:ir.ui.menu,name:fit_saltedge_sync_bank_statements.login_saltedge_bank_import
+msgid "Bank overview"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.actions.client,name:fit_saltedge_sync_bank_statements.bank_registration_start_action
+#: model:ir.ui.menu,name:fit_saltedge_sync_bank_statements.bank_registration_start_item
+msgid "Bank registration"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_synchronise
+msgid "By clicking the 'start' button you are starting the bank account synchronization process.\n"
+"                                <br/>The active bank account will be retrieved and the communication process is started.\n"
+"                                <br/>You may be asked, depending on the bank institution, to provide additional interactive credentials.\n"
+"                                <br/>The progress is automatically updated; and status information is provided.\n"
+"                                <br/>Please keep in mind that a synchronization can only be started once per hour and that the process could\n"
+"                                take a couple minutes to complete."
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_wizard_login
+msgid "By clicking the 'start' button you are starting the bank registration process.\n"
+"                                The available bank institutions are retrieved and you can choose the desired institution.\n"
+"                                After choosing the institution you are asked to provide the right credentials, different for each\n"
+"                                bank, make sure you have all the details available before starting the process."
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_settings_settings_client_id
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_synchronise_client_id
+msgid "Client ID"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_provider_code
+msgid "Code"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_connect
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_synchronise_connect
+msgid "Connect"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_country_id
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_provider_country_code
+msgid "Country"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_synchronise
+msgid "Create New Journal"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_create_uid
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_stage_create_uid
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_interactive_field_create_uid
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_create_uid
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_stage_create_uid
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_create_uid
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_create_uid
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_create_uid
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_option_create_uid
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_settings_create_uid
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_create_uid
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_stage_create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_create_date
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_stage_create_date
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_interactive_field_create_date
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_create_date
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_stage_create_date
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_create_date
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_create_date
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_create_date
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_option_create_date
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_settings_create_date
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_create_date
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_stage_create_date
+msgid "Created on"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_account_currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_settings_settings_customer_id
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_synchronise_customer_id
+msgid "Customer ID"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_settings_settings_customer_identifier
+msgid "Customer identifier"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_settings_settings_customer_secret
+msgid "Customer secret"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_settings_settings_debug
+msgid "Debug enabled?"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_kanban_account_overview
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_kanban_login_overview
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_kanban_settings
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_kanban_synchronise
+msgid "Delete"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_settings
+msgid "Delete Bank Registrations"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_login_overview
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_settings
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_synchronise
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_saltedge_account
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_wizard_login
+msgid "Details"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_display_name
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_stage_display_name
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_interactive_field_display_name
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_display_name
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_stage_display_name
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_display_name
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_display_name
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_display_name
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_option_display_name
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_settings_display_name
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_display_name
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_stage_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_option_provider_field_option_english_name
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_provider_field_english_name
+msgid "English name"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_settings_settings_environment_url
+msgid "Environment URL"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_error
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_wizard_login
+msgid "Error"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: code:addons/fit_saltedge_sync_bank_statements/models/m_account.py:64
+#, python-format
+msgid "Error while activating account, only one active account allowed."
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: code:addons/fit_saltedge_sync_bank_statements/models/m_login.py:389
+#, python-format
+msgid "Error while activating bank registration, only one active registration allowed."
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: code:addons/fit_saltedge_sync_bank_statements/models/m_settings.py:47
+#, python-format
+msgid "Error while creating connection object: \n"
+"Error: "
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: code:addons/fit_saltedge_sync_bank_statements/models/m_provider.py:233
+#, python-format
+msgid "Error while retrieving banking institution details (provider details): \n"
+"\n"
+"Code: \n"
+"Error: "
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: code:addons/fit_saltedge_sync_bank_statements/models/m_provider.py:218
+#, python-format
+msgid "Error while retrieving banking institutions (providers): \n"
+"\n"
+"Code: \n"
+"Error: "
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: code:addons/fit_saltedge_sync_bank_statements/classes/c_client.py:29
+#, python-format
+msgid "Error while validating the client information: \n"
+"\n"
+"Code: \n"
+"Error: "
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: code:addons/fit_saltedge_sync_bank_statements/models/m_login.py:269
+#: code:addons/fit_saltedge_sync_bank_statements/models/m_login.py:307
+#, python-format
+msgid "Error: \n"
+"Details: error_message"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_interactive_field_interactive_field_field
+msgid "Field"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_provider_field_options
+msgid "Field options"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_provider_fields
+msgid "Fields"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,help:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_data_file
+msgid "Get you bank statements in electronic format from your bank and select them here."
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_login_overview
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_saltedge_account
+msgid "Help"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_id
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_stage_account_stage_id
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_stage_id
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_interactive_field_id
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_interactive_field_interactive_field_id
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_id
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_stage_id
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_stage_login_stage_id
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_id
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_id
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_option_id
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_id
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_provider_id
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_settings_id
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_id
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_stage_id
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_stage_synchronise_stage_id
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_synchronise_id
+msgid "ID"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_settings_settings_identifier
+msgid "Identifier"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_filter_account_overview
+msgid "Inactive"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model,name:fit_saltedge_sync_bank_statements.model_fit_saltedge_interactive_field
+msgid "Interactive Field"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_interactive_fields
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_synchronise_interactive_fields
+msgid "Interactive fields"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: code:addons/fit_saltedge_sync_bank_statements/classes/c_transactions.py:115
+#: code:addons/fit_saltedge_sync_bank_statements/classes/c_transactions.py:323
+#, python-format
+msgid "Journal for bank account: %s not available, please create journal first."
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account___last_update
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_stage___last_update
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_interactive_field___last_update
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login___last_update
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_stage___last_update
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard___last_update
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider___last_update
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field___last_update
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_option___last_update
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_settings___last_update
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise___last_update
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_stage___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_synchronise_last_update
+msgid "Last Update"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_stage_write_uid
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_write_uid
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_interactive_field_write_uid
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_stage_write_uid
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_write_uid
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_write_uid
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_option_write_uid
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_write_uid
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_write_uid
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_settings_write_uid
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_stage_write_uid
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_stage_write_date
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_write_date
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_interactive_field_write_date
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_stage_write_date
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_write_date
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_write_date
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_option_write_date
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_write_date
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_write_date
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_settings_write_date
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_stage_write_date
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_account_latest_sync
+msgid "Latest sync"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_account_latest_sync_id
+msgid "Latest sync ID"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_option_provider_field_option_local_name
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_provider_field_local_name
+msgid "Localized name"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model,name:fit_saltedge_sync_bank_statements.model_fit_saltedge_login
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_login_overview
+msgid "Login"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_synchronise_login_id
+msgid "Login ID"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model,name:fit_saltedge_sync_bank_statements.model_fit_saltedge_login_stage
+msgid "Login Stage"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model,name:fit_saltedge_sync_bank_statements.model_fit_saltedge_login_wizard
+msgid "Login Wizard"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_login_id
+msgid "Login id"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_login_nr_accounts
+msgid "Login nr accounts"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_login_provider
+msgid "Login provider"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_char_fld_1_id
+msgid "Login wizard char fld 1 id"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_char_fld_1_label
+msgid "Login wizard char fld 1 label"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_char_fld_1_value
+msgid "Login wizard char fld 1 value"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_char_fld_1_visible
+msgid "Login wizard char fld 1 visible"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_char_fld_2_id
+msgid "Login wizard char fld 2 id"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_char_fld_2_label
+msgid "Login wizard char fld 2 label"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_char_fld_2_value
+msgid "Login wizard char fld 2 value"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_char_fld_2_visible
+msgid "Login wizard char fld 2 visible"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_login_wizard_id
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_id
+msgid "Login wizard id"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_interactive
+msgid "Login wizard interactive"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_provider_id
+msgid "Login wizard provider id"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_pwd_fld_1_id
+msgid "Login wizard pwd fld 1 id"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_pwd_fld_1_label
+msgid "Login wizard pwd fld 1 label"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_pwd_fld_1_value
+msgid "Login wizard pwd fld 1 value"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_pwd_fld_1_visible
+msgid "Login wizard pwd fld 1 visible"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_selection_fld_1_label
+msgid "Login wizard selection fld 1 label"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_selection_fld_1_value
+msgid "Login wizard selection fld 1 value"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_selection_fld_1_visible
+msgid "Login wizard selection fld 1 visible"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_provider_mode
+msgid "Mode"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_account_name
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_stage_account_stage_name
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_interactive_field_interactive_field_name
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_login_name
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_stage_login_stage_name
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_option_provider_field_option_name
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_provider_field_name
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_provider_name
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_stage_synchronise_stage_name
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_synchronise_name
+msgid "Name"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_provider_field_nature
+msgid "Nature"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_provider_field_optional
+msgid "Optional"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_settings_settings_password
+msgid "Password"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_provider_field_position
+msgid "Position"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_wizard_login
+msgid "Process successful, click on the 'View Registrations' button to validate the login."
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model,name:fit_saltedge_sync_bank_statements.model_fit_saltedge_provider
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_provider
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_provider
+msgid "Provider"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model,name:fit_saltedge_sync_bank_statements.model_fit_saltedge_provider_field
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_selection_fld_1_field
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_option_provider_field
+msgid "Provider Field"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model,name:fit_saltedge_sync_bank_statements.model_fit_saltedge_provider_field_option
+msgid "Provider Field Option"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_synchronise
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_wizard_login
+msgid "Result"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_synchronise
+msgid "Retrieve Available Transactions"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_synchronise
+msgid "Retrieve Transactions"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#. openerp-web
+#: code:addons/fit_saltedge_sync_bank_statements/static/src/xml/fit_saltedge_templates.xml:5
+#, python-format
+msgid "SaltEdgeWidget div"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_stage_account_stage_sequence
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_stage_login_stage_sequence
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_stage_synchronise_stage_sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_settings_settings_service_secret
+msgid "Service secret"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: code:addons/fit_saltedge_sync_bank_statements/models/m_settings.py:17
+#: model:ir.actions.act_window,name:fit_saltedge_sync_bank_statements.settings_action
+#: model:ir.model,name:fit_saltedge_sync_bank_statements.model_fit_saltedge_settings
+#: model:ir.ui.menu,name:fit_saltedge_sync_bank_statements.settings_saltedge_bank_import
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_settings
+#, python-format
+msgid "Settings"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_synchronise_saltedge_stage
+msgid "Stage"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_synchronise
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_wizard_login
+msgid "Start"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_wizard_login
+msgid "Start Registration"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: code:addons/fit_saltedge_sync_bank_statements/models/m_login.py:278
+#, python-format
+msgid "Start registration, retrieve providers."
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_state
+msgid "State"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_account_status
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_login_status
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_status
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_status_label
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_provider_status
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_settings_settings_status
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_synchronise_status
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_settings
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_wizard_login
+msgid "Status"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_settings_settings_sync_from_date
+msgid "Sync from"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model,name:fit_saltedge_sync_bank_statements.model_fit_saltedge_synchronise
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_synchronise
+msgid "Synchronise"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model,name:fit_saltedge_sync_bank_statements.model_fit_saltedge_synchronise_stage
+msgid "Synchronise Stage"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_synchronise_account
+msgid "Synchronise account"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_synchronise_error
+msgid "Synchronise error"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_synchronise_journal_fail
+msgid "Synchronise journal fail"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_synchronise_notifications
+msgid "Synchronise notifications"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_synchronise_state
+msgid "Synchronise state"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_synchronise_state_check
+msgid "Synchronise state check"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_synchronise_synchronise_statements_ids
+msgid "Synchronise statements ids"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.actions.act_window,name:fit_saltedge_sync_bank_statements.synchronise_overview_action
+#: model:ir.ui.menu,name:fit_saltedge_sync_bank_statements.synchronise_overview_saltedge_bank_import
+msgid "Synchronization overview"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.actions.client,name:fit_saltedge_sync_bank_statements.synchronise_start_action
+#: model:ir.ui.menu,name:fit_saltedge_sync_bank_statements.synchronise_start_saltedge_bank_import
+msgid "Synchronization start"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_login_overview
+msgid "TODO LOGIN BESCHRIJVING...."
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_saltedge_account
+msgid "This form represents the bank account details, the acocunt can be activated and deactivated. <br/>Only one active\n"
+"                            bank account can be present. The synchronization proces automatically retrives the active account."
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_account_account_nature
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_provider_field_type
+msgid "Type"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_settings
+msgid "Update Bank Institutions"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_settings_settings_username
+msgid "Username"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_settings
+msgid "Validate Bank Registrations"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_wizard_login
+msgid "Validate Data"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_settings
+msgid "Validate Settings"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_synchronise
+msgid "Validate data"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_interactive_field_interactive_field_value
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_provider_field_option_provider_field_option_value
+msgid "Value"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_synchronise
+msgid "View Bank Statements"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_wizard_login
+msgid "View Registration"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: code:addons/fit_saltedge_sync_bank_statements/models/m_settings.py:113
+#, python-format
+msgid "You don't have the appropriate rights to update these settings"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: code:addons/fit_saltedge_sync_bank_statements/classes/c_transactions.py:328
+#, python-format
+msgid "You have to set a Default Debit Account and a Default Credit Account for the journal: %s"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_login_overview
+msgid "actie 1"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_login_overview
+msgid "actie 2"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.ui.view,arch_db:fit_saltedge_sync_bank_statements.view_form_login_overview
+msgid "actie 3"
+msgstr ""
+
+#. module: fit_saltedge_sync_bank_statements
+#: model:ir.model.fields,field_description:fit_saltedge_sync_bank_statements.field_fit_saltedge_login_wizard_login_wizard_selection_fld_1_id
+msgid "label"
+msgstr ""
+
