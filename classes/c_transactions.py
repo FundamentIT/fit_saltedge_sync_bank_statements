@@ -29,7 +29,7 @@ class FitSaltEdgeTransactions:
         _current_latest_sync_date = _m_active_account.account_latest_sync
         payload = json.loads(payload)
         if not _current_latest_sync_date:
-            _past_date = datetime.today().date() + relativedelta(months=-2) + relativedelta(days=+1)
+            _past_date = datetime.today().date() + relativedelta(months=-2) + relativedelta(days=+2)
             _tomorrow_date = datetime.today().date() + relativedelta(days=+1)
             from_date = {u'from_date': str(_past_date)}
             to_date = {u'to_date': str(_tomorrow_date)}
@@ -82,7 +82,7 @@ class FitSaltEdgeTransactions:
             self.synchronise_item.write({'synchronise_error': ''})
             app = SaltEdge(self.settings.settings_client_id, self.settings.settings_service_secret)
             inactive_accounts = self._get_inactive_accounts()
-            payload = json.dumps({'data': {"fetch_type": "custom", "exclude_accounts": inactive_accounts}})
+            payload = json.dumps({'data': {"fetch_type": "custom", "fetch_scopes": ["transactions"], "exclude_accounts": inactive_accounts}})
             payload = self.__add_unique_id(payload, self.settings.settings_environment_url)
 
             active_accounts = self.synchronise_item.env['fit.saltedge.account'].search([['account_status', '=', 'Active']], limit=1)
