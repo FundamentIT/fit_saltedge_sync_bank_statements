@@ -50,9 +50,6 @@
                     <button id="fit_view_reconciliation" string="View Bank Statements" type="object" name="view_reconciliation"
                             class="oe_highlight"
                             attrs="{'invisible': [('synchronise_state_check','!=','Done')]}"/>
-                    <button string="Update Data" type="object" name="update_data"
-                            class="btn btn-sm"
-                            attrs="{'invisible': [('synchronise_state_check','not in',['Interactive', 'Connecting', 'Start'])]}"/>
                     <field name="synchronise_state" widget="statusbar"/>
                 </header>
                 <sheet>
