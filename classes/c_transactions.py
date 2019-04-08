@@ -80,9 +80,9 @@ class FitSaltEdgeTransactions:
     def initialize_refresh(self):
         try:
             self.synchronise_item.write({'synchronise_error': ''})
-            app = SaltEdge(self.settings.settings_client_id, self.settings.settings_service_secret)
+            app = SaltEdge(self.settings.settings_client_id, self.settings.settings_app_id, self.settings.settings_service_secret)
             inactive_accounts = self._get_inactive_accounts()
-            payload = json.dumps({'data': {"fetch_type": "custom", "fetch_scopes": ["transactions"], "exclude_accounts": inactive_accounts}})
+            payload = json.dumps({'data': {"fetch_scopes": ["accounts","transactions"], "exclude_accounts": inactive_accounts}})
             payload = self.__add_unique_id(payload, self.settings.settings_environment_url)
 
             active_accounts = self.synchronise_item.env['fit.saltedge.account'].search([['account_status', '=', 'Active']], limit=1)
@@ -118,7 +118,7 @@ class FitSaltEdgeTransactions:
 
                 payload = self._add_from_and_to_date(payload, _m_active_account)
                 response = app.put(
-                    'https://www.saltedge.com/api/v3/logins/' + str(_m_active_account.account_login_id) + '/refresh', payload)
+                    'https://www.saltedge.com/api/v4/logins/' + str(_m_active_account.account_login_id) + '/refresh', payload)
 
                 synchronise_status = str(self.synchronise_item.synchronise_status)
                 synchronise_status += '\n' + str(fields.Datetime.now())
@@ -147,8 +147,8 @@ class FitSaltEdgeTransactions:
     def validate_credentials(self):
         try:
             self.synchronise_item.write({'synchronise_error': ''})
-            app = SaltEdge(self.settings.settings_client_id, self.settings.settings_service_secret)
-            payload = '{"data": {"fetch_type": "recent", "credentials": {'
+            app = SaltEdge(self.settings.settings_client_id, self.settings.settings_app_id, self.settings.settings_service_secret)
+            payload = '{"data": {"credentials": {'
             count = 0
             for synchronise_interactive_field in self.synchronise_item.synchronise_interactive_fields:
                 print synchronise_interactive_field.interactive_field_field
@@ -163,7 +163,7 @@ class FitSaltEdgeTransactions:
             payload = json.dumps(json.loads(payload))
             payload = self.__add_unique_id(payload, self.settings.settings_environment_url)
 
-            response = app.put('https://www.saltedge.com/api/v3/logins/' + str(self.synchronise_item.synchronise_login_id) + '/interactive',
+            response = app.put('https://www.saltedge.com/api/v4/logins/' + str(self.synchronise_item.synchronise_login_id) + '/interactive',
                                payload)
 
             synchronise_status = str(self.synchronise_item.synchronise_status)
@@ -199,12 +199,12 @@ class FitSaltEdgeTransactions:
     def retrieve_transactions(self, next_id=None):
         try:
             self.synchronise_item.write({'synchronise_error': ''})
-            app = SaltEdge(self.settings.settings_client_id, self.settings.settings_service_secret)
+            app = SaltEdge(self.settings.settings_client_id, self.settings.settings_app_id, self.settings.settings_service_secret)
             if next_id:
-                response = app.get('https://www.saltedge.com/api/v3/transactions?account_id=' + self.synchronise_item.synchronise_account_id +
+                response = app.get('https://www.saltedge.com/api/v4/transactions?account_id=' + self.synchronise_item.synchronise_account_id +
                                    '&from_id=' + str(next_id))
             else:
-                response = app.get('https://www.saltedge.com/api/v3/transactions?account_id=' + self.synchronise_item.synchronise_account_id)
+                response = app.get('https://www.saltedge.com/api/v4/transactions?account_id=' + self.synchronise_item.synchronise_account_id)
 
             synchronise_status = str(self.synchronise_item.synchronise_status)
             synchronise_status += '\n' + str(fields.Datetime.now())

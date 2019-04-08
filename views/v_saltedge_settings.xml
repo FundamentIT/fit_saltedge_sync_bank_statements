@@ -85,6 +85,7 @@
                             <!--</group>-->
                             <!--<group name="group-right_t">-->
                             <field name="settings_client_id"  groups="base.group_system"/>
+                            <field name="settings_app_id"  groups="base.group_system"/>
                             <field name="settings_service_secret" groups="base.group_system"/>
                             <field name="settings_customer_identifier"/>
                             <field name="settings_customer_id" />

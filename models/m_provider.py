@@ -206,8 +206,11 @@ class FitSaltEdgeProvider:
 
     def __retrieve_providers(self, _code):
         # start retrieving providers
-        app = SaltEdge(self._m_settings.settings_client_id, self._m_settings.settings_service_secret)
-        response = app.get('https://www.saltedge.com/api/v3/providers?country_code=' + _code + '&mode=web')
+        app = SaltEdge(self._m_settings.settings_client_id, self._m_settings.settings_app_id, self._m_settings.settings_service_secret)
+        try:
+            response = app.get('https://www.saltedge.com/api/v4/providers?country_code=' + _code + '&mode=web')
+        except Exception as e:
+            print 'ERROR: '+str(e)
 
         if response.status_code == 200:
             # parse result
@@ -218,11 +221,11 @@ class FitSaltEdgeProvider:
                               str(response.text)))
 
     def __retrieve_provider_details(self, provider):
-        app = SaltEdge(self._m_settings.settings_client_id, self._m_settings.settings_service_secret)
+        app = SaltEdge(self._m_settings.settings_client_id, self._m_settings.settings_app_id, self._m_settings.settings_service_secret)
         # delete existing and create new provider details
         if provider.code:
             # start retrieving provider details
-            response = app.get('https://www.saltedge.com/api/v3/providers/' + str(provider.code))
+            response = app.get('https://www.saltedge.com/api/v4/providers/' + str(provider.code))
             if response.status_code == 200:
                 # parse result
                 json_data = json.loads(response.content, object_hook=lambda d: namedtuple('X', d.keys())(*d.values()))

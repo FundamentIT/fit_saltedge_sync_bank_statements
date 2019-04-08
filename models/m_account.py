@@ -74,7 +74,7 @@ class FitSaltedgeAccountModel(models.Model):
             print 'error: '+str(e)
         # def refresh_accounts(self, saltedge_customer):
     #     response = self.settings.app.get(
-    #         'https://www.saltedge.com/api/v3/accounts?customer_id=' + str(saltedge_customer.customer_id))
+    #         'https://www.saltedge.com/api/v4/accounts?customer_id=' + str(saltedge_customer.customer_id))
     #
     #     if response.status_code == 200:
     #         json_data = json.loads(response.content, object_hook=lambda d: namedtuple('X', d.keys())(*d.values()))
@@ -132,7 +132,7 @@ class FitSaltEdgeAccount:
     def refresh_accounts(self):
 
         response = self.settings.app.get(
-            'https://www.saltedge.com/api/v3/accounts?customer_id=' + str(self.settings.settings_customer_id))
+            'https://www.saltedge.com/api/v4/accounts?customer_id=' + str(self.settings.settings_customer_id))
 
         if response.status_code == 200:
             json_data = json.loads(response.content, object_hook=lambda d: namedtuple('X', d.keys())(*d.values()))

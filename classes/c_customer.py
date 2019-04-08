@@ -24,7 +24,7 @@ class FitSaltEdgeCustomer:
 
     def create_customer(self):
         payload = json.dumps({"data": {"identifier": "" + self.settings.settings_customer_identifier + ""}})
-        response = self.settings.app.post('https://www.saltedge.com/api/v3/customers/', payload)
+        response = self.settings.app.post('https://www.saltedge.com/api/v4/customers/', payload)
         if response.status_code == 200:
             print 'create customer success: ' + str(response.content)
             json_data = json.loads(response.content, object_hook=lambda d: namedtuple('X', d.keys())(*d.values()))
@@ -38,7 +38,7 @@ class FitSaltEdgeCustomer:
                     response.text))
 
     def is_customer_available(self, customer_id):
-        response = self.settings.app.get('https://www.saltedge.com/api/v3/customers/' + customer_id)
+        response = self.settings.app.get('https://www.saltedge.com/api/v4/customers/' + customer_id)
         if response.status_code == 200:
             print 'call customer info success: ' + str(response.content)
             json_data = json.loads(response.content, object_hook=lambda d: namedtuple('X', d.keys())(*d.values()))

@@ -22,6 +22,7 @@ class FitSaltedgeSettingsModel(models.Model):
     settings_identifier = fields.Char('Identifier')
     settings_service_secret = fields.Char('Service secret')
     settings_client_id = fields.Char('Client ID')
+    settings_app_id = fields.Char('App ID')
     settings_customer_id = fields.Char('Customer ID')
     settings_customer_identifier = fields.Char('Customer identifier')
     settings_customer_secret = fields.Char('Customer secret')
@@ -35,7 +36,7 @@ class FitSaltedgeSettingsModel(models.Model):
 
     def _get_app(self):
         try:
-            self.app = SaltEdge(self.settings_client_id, self.settings_service_secret)
+            self.app = SaltEdge(self.settings_client_id, self.settings_app_id, self.settings_service_secret)
         except BaseException as e:
             error = ''
             if hasattr(e, 'strerror'):
@@ -52,11 +53,11 @@ class FitSaltedgeSettingsModel(models.Model):
         self._get_app()
         try:
             _c_saltedge_client = FitSaltEdgeClient(self)
-            if _c_saltedge_client.validate_client():
-                _c_saltedge_customer = FitSaltEdgeCustomer(self)
-                if _c_saltedge_customer.validate_customer():
-                    _logger.info('Successfully validated settings')
-                    self.settings_status += '\n' + str(fields.Datetime.now()) + ' Successfully validated settings'
+            #if _c_saltedge_client.validate_client():
+            _c_saltedge_customer = FitSaltEdgeCustomer(self)
+            if _c_saltedge_customer.validate_customer():
+                _logger.info('Successfully validated settings')
+                self.settings_status += '\n' + str(fields.Datetime.now()) + ' Successfully validated settings'
         except BaseException as e:
             raise
 

@@ -330,8 +330,8 @@ class FitSaltEdgeController(http.Controller):
                 'login_wizard_error': _(error)})
 
             _c_saltedge_settings = request.env['fit.saltedge.settings'].sudo().search([], limit=1)
-            app = SaltEdge(_c_saltedge_settings.settings_client_id, _c_saltedge_settings.settings_service_secret)
-            delete = app.delete('https://www.saltedge.com/api/v3/logins/' + str(login_wizard_id))
+            app = SaltEdge(_c_saltedge_settings.settings_client_id, _c_saltedge_settings.settings_app_id, _c_saltedge_settings.settings_service_secret)
+            delete = app.delete('https://www.saltedge.com/api/v4/logins/' + str(login_wizard_id))
 
             request.env['bus.bus'].sendone('auto_refresh', 'fit.saltedge.login.wizard')
 
@@ -373,7 +373,7 @@ class FitSaltEdgeController(http.Controller):
         synchronise_item = request.env['fit.saltedge.synchronise'].sudo().browse(sync_id)
 
         if synchronise_item:
-            print 'success callback stage: ' + synchronise_item.synchronise_saltedge_stage
+            print 'success callback stage: ' + str(synchronise_item.synchronise_saltedge_stage)
             if synchronise_item.synchronise_saltedge_stage == 'finish':
                 print 'FOUND FINISHED REFRESH, START TRANSACTION UPDATE'
                 _logger.info('Successful refresh, set state to \'transactions update\'')

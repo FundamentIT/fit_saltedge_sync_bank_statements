@@ -245,18 +245,20 @@ class FitSaltedgeLoginWizardModel(models.TransientModel):
         _logger.info('Register new login for provider: ' + str(self.login_wizard_provider.provider_name))
         try:
             _c_saltedge_settings = FitSaltEdgeSettings(self.env).get_settings()
-            app = SaltEdge(_c_saltedge_settings.settings_client_id, _c_saltedge_settings.settings_service_secret)
+            app = SaltEdge(_c_saltedge_settings.settings_client_id, _c_saltedge_settings.settings_app_id,
+                           _c_saltedge_settings.settings_service_secret)
             payload = json.dumps({"data":
                 {
                     "customer_id": int(_c_saltedge_settings.settings_customer_id),
                     "country_code": str(self.login_wizard_provider.provider_country_code),
                     "provider_code": str(self.login_wizard_provider.provider_code),
-                    "fetch_type": "recent"
+                    "fetch_scopes": ["accounts", "transactions"]
+                    #"fetch_type": "recent"
                 }
             })
             payload = self.__add_credentials(payload)
             payload = self.__add_unique_id(payload, _c_saltedge_settings.settings_environment_url)
-            response = app.post('https://www.saltedge.com/api/v3/logins/', payload)
+            response = app.post('https://www.saltedge.com/api/v4/logins/', payload)
             if response.status_code == 200:
                 _logger.info('Login registration successful: ' + str(response.content))
                 self.login_wizard_status += '\n' + str(fields.Datetime.now()) + ' Started new registration, please wait.'
@@ -265,7 +267,7 @@ class FitSaltedgeLoginWizardModel(models.TransientModel):
                 print json_data
             else:
                 print 'error: ' + str(response.status_code) + ', details: ' + str(response.content)
-                delete = app.delete('https://www.saltedge.com/api/v3/logins/' + str(self.login_wizard_id))
+                delete = app.delete('https://www.saltedge.com/api/v4/logins/' + str(self.login_wizard_id))
                 raise UserError(_('Error: ' + str(response.status_code) + '\nDetails: ' + json.loads(response.content)[u'error_message']))
         except UserError:
             raise
@@ -282,7 +284,7 @@ class FitSaltedgeLoginWizardModel(models.TransientModel):
         _logger.info('Validating data login for provider: ' + str(self.login_wizard_provider.provider_name))
         try:
             _c_saltedge_settings = FitSaltEdgeSettings(self.env).get_settings()
-            app = SaltEdge(_c_saltedge_settings.settings_client_id, _c_saltedge_settings.settings_service_secret)
+            app = SaltEdge(_c_saltedge_settings.settings_client_id, _c_saltedge_settings.settings_app_id, _c_saltedge_settings.settings_service_secret)
             payload = json.dumps({"data":
                 {
                     "customer_id": int(_c_saltedge_settings.settings_customer_id),
@@ -293,7 +295,7 @@ class FitSaltedgeLoginWizardModel(models.TransientModel):
             })
             payload = self.__add_interactive_credentials(payload)
             payload = self.__add_unique_id(payload, _c_saltedge_settings.settings_environment_url)
-            response = app.put('https://www.saltedge.com/api/v3/logins/' + str(self.login_wizard_id) + '/interactive', payload)
+            response = app.put('https://www.saltedge.com/api/v4/logins/' + str(self.login_wizard_id) + '/interactive', payload)
             if response.status_code == 200:
                 _logger.info('Login registration successful: ' + str(response.content))
                 self.login_wizard_status += '\n' + str(fields.Datetime.now()) + ' Successfully validated interactive request, please wait.'
@@ -302,7 +304,7 @@ class FitSaltedgeLoginWizardModel(models.TransientModel):
             else:
                 print 'error: ' + str(response.status_code) + ', details: ' + str(response.content)
                 print 'posting delete for login: ' + str(self.login_wizard_id)
-                delete = app.delete('https://www.saltedge.com/api/v3/logins/' + str(self.login_wizard_id))
+                delete = app.delete('https://www.saltedge.com/api/v4/logins/' + str(self.login_wizard_id))
 
                 raise UserError(_('Error: ' + str(response.status_code) + '\nDetails: ' + json.loads(response.content)[u'error_message']))
         except UserError:
@@ -395,8 +397,8 @@ class FitSaltedgeLoginModel(models.Model):
     def unlink(self):
         try:
             _c_saltedge_settings = FitSaltEdgeSettings(self.env).get_settings()
-            _app = SaltEdge(_c_saltedge_settings.settings_client_id, _c_saltedge_settings.settings_service_secret)
-            _response = _app.delete('https://www.saltedge.com/api/v3/logins/' + str(self.login_id))
+            _app = SaltEdge(_c_saltedge_settings.settings_client_id, _c_saltedge_settings.settings_app_id, _c_saltedge_settings.settings_service_secret)
+            _response = _app.delete('https://www.saltedge.com/api/v4/logins/' + str(self.login_id))
             if _response.status_code == 200:
                 _logger.info('Successfully initialized delete for login with id: ' + str(self.login_id))
                 _c_saltedge_settings.delete_accounts()

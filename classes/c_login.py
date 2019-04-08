@@ -11,7 +11,7 @@ class FitSaltEdgeLogin:
 
     def refresh_logins(self, customer_id):
         response = self._m_settings.app.get(
-            'https://www.saltedge.com/api/v3/logins?customer_id=' + str(customer_id))
+            'https://www.saltedge.com/api/v4/logins?customer_id=' + str(customer_id))
 
         if response.status_code == 200:
             json_data = json.loads(response.content, object_hook=lambda d: namedtuple('X', d.keys())(*d.values()))

@@ -16,7 +16,7 @@ class FitSaltEdgeClient:
         return self.call_client_info()
 
     def call_client_info(self):
-        response = self.settings.app.get('https://www.saltedge.com/api/v3/client/info')
+        response = self.settings.app.get('https://www.saltedge.com/api/v4/client/info')
         if response.status_code == 200:
             print 'call client info success: ' + str(response.content)
             json_data = json.loads(response.content, object_hook=lambda d: namedtuple('X', d.keys())(*d.values()))
